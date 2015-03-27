@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profiel pagina</h1>
+        <a href="/api/index/logout" class="btn btn-default btn-sm">Log uit</a>
+        <% if(user.local.role == 'admin') { %>
+            <a href="/races" class="btn btn-default btn-sm">Beheer races</a>
+            <a href="/waypoints" class="btn btn-default btn-sm">Beheer waypoints/horeca-etablissementen</a>
+        <% } else { %>
+            <a href="/races" class="btn btn-default btn-sm">Races</a>
+        <% } %>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span></h3>
+
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %><br>
+                        <strong>role</strong>: <%= user.local.role %><br>
+                        <strong>User virtual fullinfo</strong>: <%= user.fullinfo %>
+                    </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

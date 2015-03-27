@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container"> 
+    <% if(role === 'admin' && data[0].status == 'pending'){ %>
+        <button class='btn btn-warning btn-small btn_start_race' rel='<%= data[0]._id %>'>Start the race!</button>
+    <% }else if(role === 'admin' && data[0].status == 'started'){ %>
+        <button class='btn btn-danger btn-small btn_stop_race' rel='<%= data[0]._id %>'>Stop the race!</button>
+    <% }else if(role === 'admin' && data[0].status == 'stopped'){ %>
+        <button class='btn btn-warning btn-small btn_show_results' rel='<%= data[0]._id %>'><a href='/races/<%= data[0]._id %>/results'>Show Results!</a></button>
+    <% } %>
+
+    <h1><label class='race_id_label' rel='<%= data[0]._id %>'>Race: <%= data[0].name %></label></h1>
+    <% if(role === 'admin'){ %>
+    <div class='row'>
+        <div class='search_data'>
+            Zoek een café: <input type='text' id='search_cafe' />
+            <button id='search_cafe_submit' class="btn btn-warning btn-md">Go!</button> 
+        </div>
+        <div class="jumbotron">
+            <div class='data_result'>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <div class='row not_first'>
+        <h2>Waypoints in deze race</h2>
+        <div class="jumbotron">
+            <div class="waypoints_of_race">
+
+            </div>
+        </div>
+    </div>
+    
+    <% if(role === 'admin'){ %>
+    <div class='row not_first'>
+        <h2>Gebruikers in deze race</h2>
+        <div class="jumbotron">
+            <div class="users_of_race">
+
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+<div class="jumbotron text-center waypoint_info waypoint_info_races">
+
+            <div class="row">
+                <div class="col-md-4">Place:</div>
+                <div class="col-md-16 place" id='place'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Rating:</div>
+                <div class="col-md-16 rating" id='rating'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Icon:</div>
+                <div class="col-md-16 icon" id='icon'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Types:</div>
+                <div class="col-md-16 types" id='types'></div>
+            </div>
+
+    </div>
+</div>
+
+<div class='enter_race'></div>
+<input type='hidden' id='userrole' value='<%= role %>' />
+<input type='hidden' id='racestatus' value=<%= data[0].status %> />
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='/javascripts/race_waypoints.js'></script>
+</body>
+</html>

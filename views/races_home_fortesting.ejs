@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="raceInfo">
+        <h2>Info races</h2>
+        <p>
+            <strong>Naam:</strong><span id='raceInfoName'></span>
+        </p>
+    </div>
+    <h2>Race lijst</h2>
+    <div id='raceList'>
+        <table>
+            <thead>
+                <th>Racenaam</th>
+
+                <th>Verander race naam</th>
+
+                <th></th>
+
+                <th></th>
+                <th></th>
+
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <h2>Voeg race toe</h2>
+    <div class='addRace'>
+        <fieldset>
+            <label for='inputRaceName'>Naam race: </label>
+            <input id='inputRaceName' class='form-control' type='text' />
+            <button id='btnAddRace' class='btn btn-primary'>Voeg toe</button>      
+            </div>
+        </fieldset>
+    </div>
+</div>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='/javascripts/races.js'></script>
+</body>
+</html>

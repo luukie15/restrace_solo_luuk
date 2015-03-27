@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1><%= user.local.email %></h1>
+    <h2>Race is gestart, dit zijn de waypoints die je moet checken:</h2>
+    <div class="jumbotron text-center check_jumbotron">
+        <div class='data_result'>
+            
+        </div>
+    </div>
+    
+</div>
+
+<input type='hidden' id='raceid' value='<%= data._id %>' />
+<input type='hidden' id='userid' value='<%= user._id %>' />
+</body>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='/javascripts/started_race.js'></script>
+</html>

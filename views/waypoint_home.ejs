@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<h1>Zoek café's / waypoints</h1>
+<div class="container"> 
+    <div class='search_data'>
+        Search for cafe's: <input type='text' id='search_cafe' />
+        <button id='search_cafe_submit' class="btn btn-warning btn-md">Go!</button> 
+    </div>
+    <div class="jumbotron text-center">
+        <div class='data_result'>
+        </div>
+    </div>
+    <div class="jumbotron text-center waypoint_info">
+
+            <div class="row">
+                <div class="col-md-4">Place:</div>
+                <div class="col-md-16 place" id='place'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Rating:</div>
+                <div class="col-md-16 rating" id='rating'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Icon:</div>
+                <div class="col-md-16 icon" id='icon'></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Types:</div>
+                <div class="col-md-16 types" id='types'></div>
+            </div>
+
+    </div>
+</div>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='/javascripts/waypoints.js'></script>
+</body>
+</html>

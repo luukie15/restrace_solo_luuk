@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>RestRace</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<h1><label class='race_id' rel='<%= data._id %>'>Resultaten race  <%= data.name %></label></h1>
+<div class="container">
+    <div class="jumbotron race_results">
+
+    </div>
+</div>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='/javascripts/finished_race.js'></script>
+</body>
+</html>
